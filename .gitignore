@@ -2,3 +2,8 @@
 Thumbs.db
 *.log
 .cursor/
+
+# Next.js
+node_modules/
+.next/
+out/
