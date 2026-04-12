@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 
-const dmSans = DM_Sans({
+const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
-  variable: "--font-dm-sans",
+  variable: "--font-noto-sans-jp",
   display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -34,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${dmSans.variable} font-sans`}>{children}</body>
+      <body className={`${notoSansJP.variable} font-sans`}>{children}</body>
     </html>
   );
 }

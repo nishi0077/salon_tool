@@ -14,10 +14,12 @@ const config: Config = {
           cream: "#FAF8F5",
           taupe: "#3D3835",
           muted: "#5C5652",
+          light: "#F5F3F0",
+          dark: "#2A2523",
         },
       },
       fontFamily: {
-        sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+        sans: ["var(--font-noto-sans-jp)", "system-ui", "sans-serif"],
       },
     },
   },
