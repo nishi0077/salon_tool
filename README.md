@@ -1,37 +1,42 @@
-# salon_tool（FUNECT LP 共有用）
+# salon_tool — FUNECT ランディングページ
 
-## クライアントへの共有URL（GitHub Pages）
+## クライアント共有用URL（本番）
 
-リポジトリの GitHub Pages を有効にすると、次のURLでブラウザから閲覧できます。
+このリポジトリの **Next.js LP** は Vercel にデプロイされています。クライアントへの共有は次のURLをそのままお送りください。
 
-**https://nishi0077.github.io/salon_tool/**
+**https://salontool.vercel.app/**
 
-（初回は反映まで数分かかることがあります。）
+- OGP・canonical は `app/layout.tsx` の `metadataBase` を **`https://salontool.vercel.app`** に合わせています（SNS・チャットでのリンク表示用）。
+- トライアル・お問い合わせのCTAは [コーポレート FUNECT](https://techplus-company.com/funect/) 等の運営窓口にリンクしています。専用フォームURLが決まったら `app/page.tsx` の定数を更新してください。
 
-## ローカルで確認する
-
-リポジトリをクローンしたあと、`index.html` をブラウザで開くか、次のように簡易サーバーを起動してください。
+## ローカルで開発する
 
 ```bash
-# Python 3 の例
-python -m http.server 8080
+npm install
+npm run dev
 ```
 
-ブラウザで `http://localhost:8080` を開きます。
+ブラウザで [http://localhost:3000](http://localhost:3000) を開きます。
 
-## ファイル構成
+```bash
+npm run build
+npm run start
+```
+
+## デプロイ（Vercel）
+
+GitHub と連携済みの場合、`master` / `main` へのプッシュで自動デプロイされます。手動の場合は Vercel CLI（`vercel`）で同一プロジェクトに紐づけてください。
+
+## 補足：静的HTML（`index.html`）
+
+リポジトリ直下の `index.html` / `styles.css` は、以前の静的プレビュー用です。**クライアント共有の主URLは Vercel（上記）** を優先してください。
+
+## 参考ドキュメント
 
 | ファイル | 内容 |
 |----------|------|
-| `index.html` | LP本体（静的HTML） |
-| `styles.css` | スタイル |
 | `FUNECT_LP_copy_wireframe.md` | コピー・ワイヤー原稿 |
-
-## 公開前の差し替え
-
-- フッター・CTAの **お問い合わせ先URL**（現在は [TECH Plus サイト](https://techplus-company.com/) への仮リンク）
-- **プライバシーポリシー・特商法** の正式URL
-- 必要に応じて **OGP画像**（`index.html` の `meta`）
+| `app/page.tsx` | LP本体（Next.js App Router） |
 
 ## ライセンス
 

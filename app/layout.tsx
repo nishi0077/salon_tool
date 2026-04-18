@@ -10,7 +10,7 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://funect.net"),
+  metadataBase: new URL("https://salontool.vercel.app"),
   title: "FUNECT | AIコンシェルジュ（美容サロン向け）",
   description:
     "問い合わせ対応や予約受付の流れを整え、事業者と利用者の双方にとって使いやすい体験を実現するAIコンシェルジュ。",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ja_JP",
-    url: "https://funect.net",
+    url: "https://salontool.vercel.app",
     siteName: "FUNECT",
     title: "FUNECT | AIコンシェルジュ（美容サロン向け）",
     description:

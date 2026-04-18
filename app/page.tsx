@@ -102,6 +102,18 @@ function IconLink({ className = "h-6 w-6" }: { className?: string }) {
   );
 }
 
+/** ロゴ横のマーク（「F」テキストはクローラーで FFUNECT と連結されやすいためアイコンに統一） */
+function LogoMark({ className = "h-9 w-9 text-sm" }: { className?: string }) {
+  return (
+    <span
+      className={`inline-flex flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-rose to-brand-gold text-white shadow ${className}`}
+      aria-hidden
+    >
+      <IconChat className="h-[55%] w-[55%] text-white" />
+    </span>
+  );
+}
+
 /* ─── CTA Buttons ─── */
 
 function CtaPrimary({ className = "", light = false }: { className?: string; light?: boolean }) {
@@ -205,10 +217,8 @@ export default function Home() {
       {/* ── Header ── */}
       <header className="sticky top-0 z-50 border-b border-brand-taupe/10 bg-brand-cream/95 backdrop-blur">
         <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-4 px-4 py-3 md:px-6">
-          <Link href="/" className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-brand-rose to-brand-gold text-xs font-extrabold text-white shadow" aria-hidden>
-              F
-            </span>
+          <Link href="/" className="flex items-center gap-2.5" aria-label="FUNECT トップへ">
+            <LogoMark />
             <span className="text-lg font-bold tracking-tight text-brand-taupe">
               FUNECT
               <span className="block text-[10px] font-normal tracking-wide text-brand-muted">AI Concierge</span>
@@ -540,9 +550,7 @@ export default function Home() {
       <footer className="bg-brand-dark px-4 py-10 text-sm text-white/70">
         <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-6 md:flex-row md:justify-between">
           <div className="flex items-center gap-2.5">
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-brand-rose to-brand-gold text-[10px] font-extrabold text-white" aria-hidden>
-              F
-            </span>
+            <LogoMark className="h-8 w-8" />
             <span className="font-bold text-white">
               FUNECT
               <span className="ml-1 text-[10px] font-normal text-white/50">AI Concierge</span>
