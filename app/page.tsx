@@ -249,10 +249,10 @@ export default function Home() {
             <Image
               src="/funect-logo.png"
               alt="FUNECT - AI Concierge"
-              width={1024}
-              height={683}
+              width={345}
+              height={398}
               priority
-              className="h-12 w-auto md:h-14"
+              className="h-16 w-auto md:h-20"
             />
           </Link>
           <div className="flex flex-shrink-0 items-center gap-2 md:gap-3">
