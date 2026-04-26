@@ -3,6 +3,7 @@ import Image from "next/image";
 
 const CORPORATE = "https://techplus-company.com/funect/";
 const CONTACT = "https://techplus-company.com/";
+const APPLY = "https://portal.funect.net/Apply";
 
 /* ─── SVG Icons (inline) ─── */
 
@@ -144,7 +145,7 @@ function LogoMark({ className = "h-9 w-9 text-sm" }: { className?: string }) {
 function CtaPrimary({ className = "", light = false }: { className?: string; light?: boolean }) {
   return (
     <a
-      href={CORPORATE}
+      href={APPLY}
       className={`inline-flex min-h-[48px] items-center justify-center rounded-full px-8 py-3 text-sm font-bold shadow-lg transition hover:scale-[1.02] active:scale-[0.98] ${
         light
           ? "bg-white text-brand-taupe hover:bg-brand-cream"
@@ -257,7 +258,7 @@ export default function Home() {
           <div className="flex flex-shrink-0 items-center gap-2 md:gap-3">
             <CtaPrimary className="hidden text-xs sm:inline-flex sm:text-sm" />
             <CtaSecondary className="hidden md:inline-flex" />
-            <a href={CORPORATE} className="inline-flex min-h-[40px] items-center justify-center rounded-full bg-gradient-to-r from-brand-rose to-brand-gold px-4 py-2 text-xs font-bold text-white shadow sm:hidden">
+            <a href={APPLY} className="inline-flex min-h-[40px] items-center justify-center rounded-full bg-gradient-to-r from-brand-rose to-brand-gold px-4 py-2 text-xs font-bold text-white shadow sm:hidden">
               トライアル
             </a>
           </div>
