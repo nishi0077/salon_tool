@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const CORPORATE = "https://techplus-company.com/funect/";
 const CONTACT = "https://techplus-company.com/";
@@ -102,6 +103,30 @@ function IconLink({ className = "h-6 w-6" }: { className?: string }) {
   );
 }
 
+function IconHeart({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+    </svg>
+  );
+}
+
+function IconClock({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+    </svg>
+  );
+}
+
+function IconSpark({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+    </svg>
+  );
+}
+
 /** ロゴ横のマーク（「F」テキストはクローラーで FFUNECT と連結されやすいためアイコンに統一） */
 function LogoMark({ className = "h-9 w-9 text-sm" }: { className?: string }) {
   return (
@@ -166,46 +191,48 @@ const painCards = [
     id: "pain-shift",
     icon: <IconCalendar className="h-7 w-7" />,
     title: "シフト管理がめんどくさい...",
-    body: "スタッフの勤務時間や施術可能メニュー、カレンダー上の予約状況を一元管理し、現場の負担を減らします。",
+    body: "スタッフの勤務時間や施術可能メニュー、予約状況を一元管理。スタッフ自身がログインして自分の予約受付を停止／再開できるので、運用に応じてシフトを自由に組めます。",
   },
   {
     id: "pain-refusal",
     icon: <IconShield className="h-7 w-7" />,
-    title: "来店拒否機能が欲しい...",
-    body: "スタッフごとに時間単位で予約受付不可を設定するなど、枠と条件に基づいて予約をコントロールできます。",
+    title: "当日キャンセルを繰り返す客に困ってる...",
+    body: "「来店拒否リスト」に設定したお客様からは、以後の予約を一切受け付けません。当日キャンセルを繰り返す常連にも、はっきり線を引けます。",
   },
   {
     id: "pain-menu",
     icon: <IconList className="h-7 w-7" />,
-    title: "メニューの施術時間と金額を細かく登録したい...",
-    body: "カテゴリ・詳細メニュー別に施術時間と金額を整理して登録できます。",
+    title: "メニューと指名の組み合わせが複雑...",
+    body: "メニュー別に施術時間・金額を登録。スタッフごとに対応可能メニューを設定でき、指名なしの予約は希望メニューに対応できるスタッフへ自動アサインします。",
   },
 ];
 
 const strengths = [
-  { icon: <IconArrow className="h-6 w-6" />, title: "分かりやすい導線設計", body: "利用者が迷わず進める流れを意識し、問い合わせや予約までの体験を整えます。" },
-  { icon: <IconCog className="h-6 w-6" />, title: "運用しやすい仕組み", body: "導入後の運用まで見据え、扱いやすく続けやすい仕組みづくりを大切にしています。" },
-  { icon: <IconUsers className="h-6 w-6" />, title: "顧客対応の最適化支援", body: "顧客との接点を整理し、対応品質の向上と負担軽減の両立を支援します。" },
-  { icon: <IconLink className="h-6 w-6" />, title: "継続的な価値提供", body: "一時的な改善で終わらせず、事業に合わせて価値を高め続けることを目指します。" },
+  { icon: <IconHeart className="h-6 w-6" />, title: "リピーターを取りこぼさない", body: "新規獲得より「来店経験のあるお客様を逃さない」設計。24時間どの瞬間でもチャットが受け付け、思い立ったタイミングで予約を確定できます。" },
+  { icon: <IconSpark className="h-6 w-6" />, title: "初期設定の手間を大幅削減", body: "店舗の公式サイトURLからメニューや製品情報を自動取得。導入時の煩雑な情報入力作業を圧縮し、すぐに運用を開始できます。" },
+  { icon: <IconClock className="h-6 w-6" />, title: "受付に奪われる時間を施術へ", body: "電話・問い合わせ対応に追われる時間を削減し、本来注力すべき施術サービスへ集中。施術品質の向上が、自然なリピート来店につながります。" },
+  { icon: <IconCog className="h-6 w-6" />, title: "現場で使い続けられる設計", body: "AIが勝手に断定せず、想定外はスタッフへ引き継ぎ。少人数店舗でも継続運用できる導線とUIです。" },
 ];
 
 const features = [
-  { icon: <IconBuilding />, title: "複数店舗の登録", body: "同一メールで複数店舗を管理。" },
-  { icon: <IconUsers />, title: "利用ユーザー管理", body: "ユーザーごとにログイン・運用。" },
-  { icon: <IconBuilding />, title: "店舗情報の登録", body: "営業時間・所在地・ロゴ等を管理。" },
-  { icon: <IconSearch />, title: "製品情報の登録", body: "チャットから公式サイトを検索・取得。" },
-  { icon: <IconClipboard />, title: "電子カルテ登録", body: "基本情報・施術情報を記録。" },
-  { icon: <IconList />, title: "メニュー表登録", body: "カテゴリ別に施術時間・金額を管理。" },
-  { icon: <IconChat />, title: "チャット機能", body: "AI回答・予約受付・LINE連携対応。" },
-  { icon: <IconCalendar />, title: "予約管理", body: "カレンダー表示・スタッフ別管理。" },
+  { icon: <IconBuilding />, title: "複数店舗の登録", body: "同一メールで複数店舗を一元管理。" },
+  { icon: <IconUsers />, title: "スタッフ別ユーザー管理", body: "スタッフごとにログイン。各自で予約受付の停止／再開が可能。" },
+  { icon: <IconSearch />, title: "ホームページから自動取得", body: "店舗公式サイトのURLから製品・メニュー情報を取得し、初期設定の手間を圧縮。" },
+  { icon: <IconList />, title: "メニュー × 担当割当", body: "スタッフごとに対応可能メニューを設定。指名なしは対応可能スタッフへ自動アサイン。" },
+  { icon: <IconClipboard />, title: "事前カルテ作成", body: "予約確定時、未登録のお客様には来店カードURLを自動送付。来店前に入力で電子カルテが事前作成されます。" },
+  { icon: <IconCalendar />, title: "予約枠の柔軟調整", body: "メニューの施術時間で枠を確定。予約ごとに施術時間を個別変更でき、予約と予約の間に大きな空きが生まれません。" },
+  { icon: <IconChat />, title: "Webチャット & LINE連携", body: "Webチャットを軸にLINE連携にも対応。AIが受付・回答、難しい案件はスタッフへ。" },
+  { icon: <IconShield />, title: "来店拒否リスト", body: "当日キャンセルを繰り返す顧客を登録すると、以後の予約受付を一切ブロック。" },
 ];
 
 const faqs = [
-  { q: "今使っている予約システムと併用できますか？", a: "はい。FUNECTは受付業務の自動化・補助を担うレイヤーとして設計しています。既存の予約台帳と役割を分けて導入いただく想定です。" },
+  { q: "今使っている予約システムと併用できますか？", a: "はい。FUNECTは受付業務の自動化・補助を担うレイヤーとして設計しています。既存の予約台帳と役割を分けて導入いただく想定です。なお、既存予約システムとの併用は可能ですが、システム間の自動連携は行いませんので、お客様管理のもとで併用をお願いいたします。" },
   { q: "AIが間違った回答をしたり、クレームにまで自動で答えたりしませんか？", a: "リスクが高い内容はAIが勝手に断定せず、スタッフへ引き継ぎます。現場の安心感を優先した設計です。" },
-  { q: "導入や運用は少人数でも回りますか？", a: "24時間の一次対応とFAQの自動化で負荷を下げ、必要な案件だけスタッフが拾える設計を目指しています。" },
-  { q: "LINE以外のチャネルは？", a: "チャットを中心とした受付に対応します。詳細はお問い合わせください。" },
-  { q: "トライアル後の解約は？", a: "社内ポリシーに合わせてご案内します。お問い合わせください。" },
+  { q: "導入時の初期設定は大変ですか？", a: "店舗の公式ホームページからメニューや製品情報を自動取得する仕組みを備えており、初期設定の作業を大幅に削減しています。基本情報の登録だけで運用を開始できます。" },
+  { q: "対応チャネルは？", a: "Webサイトに設置するチャットを中心に、公式LINEアカウントとの連携にも対応しています。" },
+  { q: "事前のカルテ登録はどうやりますか？", a: "予約確定時、未登録のお客様には来店カード入力用のURLを自動でご案内します。来店前に入力・送信いただくと、電子カルテが事前に作成されます。" },
+  { q: "トライアル後の解約はどうなりますか？", a: "トライアル終了後、継続利用の支払い登録をしない限り自動的に「利用停止」状態へ移行します（解約と同じ扱い）。アカウントは削除されないため、再開したい場合は支払い登録から1ヶ月分の利用料金をお支払いいただくことでそのまま再開できます。" },
+  { q: "決済手段は？", a: "クレジットカード決済のみ対応しています。決済代行はStripeを利用します。" },
   { q: "個人情報・ログの扱いは？", a: "プライバシーポリシーをご確認ください。" },
 ];
 
@@ -217,12 +244,15 @@ export default function Home() {
       {/* ── Header ── */}
       <header className="sticky top-0 z-50 border-b border-brand-taupe/10 bg-brand-cream/95 backdrop-blur">
         <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-4 px-4 py-3 md:px-6">
-          <Link href="/" className="flex items-center gap-2.5" aria-label="FUNECT トップへ">
-            <LogoMark />
-            <span className="text-lg font-bold tracking-tight text-brand-taupe">
-              FUNECT
-              <span className="block text-[10px] font-normal tracking-wide text-brand-muted">AI Concierge</span>
-            </span>
+          <Link href="/" className="flex items-center" aria-label="FUNECT - AI Concierge トップへ">
+            <Image
+              src="/funect-logo.png"
+              alt="FUNECT - AI Concierge"
+              width={1024}
+              height={683}
+              priority
+              className="h-12 w-auto md:h-14"
+            />
           </Link>
           <div className="flex flex-shrink-0 items-center gap-2 md:gap-3">
             <CtaPrimary className="hidden text-xs sm:inline-flex sm:text-sm" />
@@ -238,56 +268,77 @@ export default function Home() {
         {/* ── Hero (dark bg) ── */}
         <section className="relative overflow-hidden bg-gradient-to-br from-brand-taupe via-brand-dark to-brand-taupe px-4 py-20 md:py-28">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,169,98,0.15),transparent_60%)]" />
-          <div className="relative mx-auto grid max-w-[1200px] gap-12 md:grid-cols-2 md:items-center">
-            <div>
+          <div className="relative mx-auto flex max-w-[1200px] flex-col gap-10 md:flex-row md:items-center md:gap-12">
+            {/* テキスト + CTA（PCのみCTA表示） */}
+            <div className="order-1 md:flex-1">
               <p className="mb-5 inline-block rounded-full bg-brand-gold/20 px-4 py-1.5 text-xs font-semibold tracking-wide text-brand-gold">
                 AI Concierge for Salon
               </p>
               <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-white md:text-4xl lg:text-5xl">
-                施術中も、休みの日も。
-                <br />
-                <span className="text-brand-gold">「受付」</span>を、AIがつなぐ。
+                <span className="text-brand-gold">リピーター</span>を、
+                <br className="hidden md:block" />
+                逃がさないサロンへ。
               </h1>
               <p className="mt-6 text-base leading-relaxed text-white/80 md:text-lg">
-                予約の受付・変更・キャンセル、よくある質問、LINEやチャットからの問い合わせまで。少人数の店舗でも、「受付がいる」状態をつくります。
+                予約の受付・変更・キャンセル、よくある質問への対応まで、Webチャット／LINEでまるごと自動化。施術中も休みの日も、24時間「受付がいる」状態をつくり、来店経験のあるお客様を取りこぼしません。
               </p>
               <p className="mt-3 text-sm text-white/60">
                 想定外の内容やクレームは、AIが勝手に答えずスタッフへ引き継ぎます。
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              {/* PC: テキスト直下にCTA / SP: モックの下に出すので非表示 */}
+              <div className="mt-8 hidden flex-col gap-3 md:flex md:flex-row md:items-center">
                 <CtaPrimary />
                 <CtaSecondary light />
               </div>
             </div>
 
-            {/* Phone mock */}
-            <div className="flex justify-center" aria-hidden>
+            {/* Phone mock — 平面表示 */}
+            <div className="order-2 flex justify-center md:flex-1" aria-hidden>
               <div className="relative w-[260px] rounded-[2rem] border-4 border-white/20 bg-brand-dark p-2 shadow-2xl md:w-[280px]">
-                <div className="absolute left-1/2 top-2 h-5 w-20 -translate-x-1/2 rounded-full bg-brand-dark" />
                 <div className="overflow-hidden rounded-[1.5rem] bg-white">
-                  <div className="flex items-center gap-2 bg-gradient-to-r from-brand-rose to-brand-gold px-4 py-3">
-                    <span className="h-2 w-2 rounded-full bg-white/80" />
-                    <span className="text-xs font-semibold text-white">FUNECT チャット</span>
+                  {/* ヘッダー：ノッチを内包し、テキストは下段に配置して被りを回避 */}
+                  <div className="relative bg-gradient-to-r from-brand-rose to-brand-gold px-4 pt-6 pb-3">
+                    {/* ノッチ（ヘッダー内の最上端中央） */}
+                    <div className="absolute left-1/2 top-1 h-4 w-16 -translate-x-1/2 rounded-full bg-brand-dark" />
+                    <div className="flex items-center justify-center gap-2">
+                      <span className="h-2 w-2 rounded-full bg-white/80" />
+                      <span className="text-xs font-semibold text-white">FUNECT チャット</span>
+                    </div>
                   </div>
-                  <div className="space-y-2.5 px-3 py-4 text-xs">
+                  <div className="space-y-2 px-3 py-4 text-[11px]">
+                    <div className="ml-auto max-w-[85%] rounded-xl rounded-tr-sm bg-gradient-to-r from-brand-rose/20 to-brand-gold/20 px-3 py-2 text-brand-taupe">
+                      明日空いてますか？
+                    </div>
                     <div className="max-w-[85%] rounded-xl rounded-tl-sm bg-brand-light px-3 py-2 text-brand-taupe">
-                      こんにちは。ご希望のメニューとご希望日を教えてください。
+                      ご希望のメニューを選んでください（カット／カラー／パーマ…）
                     </div>
                     <div className="ml-auto max-w-[85%] rounded-xl rounded-tr-sm bg-gradient-to-r from-brand-rose/20 to-brand-gold/20 px-3 py-2 text-brand-taupe">
-                      カット＋カラー希望、土曜午後は可能ですか？
+                      カット
                     </div>
                     <div className="max-w-[85%] rounded-xl rounded-tl-sm bg-brand-light px-3 py-2 text-brand-taupe">
-                      空き状況を確認しています…
-                    </div>
-                    <div className="max-w-[85%] rounded-xl rounded-tl-sm bg-brand-light px-3 py-2 text-brand-taupe">
-                      14:00〜の枠でご予約可能です。ご予約しますか？
+                      明日のカットの空きは 11:00 / 13:00 / 16:00 です。
                     </div>
                     <div className="ml-auto max-w-[85%] rounded-xl rounded-tr-sm bg-gradient-to-r from-brand-rose/20 to-brand-gold/20 px-3 py-2 text-brand-taupe">
-                      はい、お願いします！
+                      カラーも追加したい
+                    </div>
+                    <div className="max-w-[85%] rounded-xl rounded-tl-sm bg-brand-light px-3 py-2 text-brand-taupe">
+                      カット＋カラーの空きは 11:00 / 16:00 です。
+                    </div>
+                    <div className="ml-auto max-w-[85%] rounded-xl rounded-tr-sm bg-gradient-to-r from-brand-rose/20 to-brand-gold/20 px-3 py-2 text-brand-taupe">
+                      担当を◯◯さんで
+                    </div>
+                    <div className="max-w-[85%] rounded-xl rounded-tl-sm bg-brand-light px-3 py-2 text-brand-taupe">
+                      ◯◯指名の空きは 16:00 です。ご予約しますか？
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* SPのみ表示：モック直下のCTA */}
+            <div className="order-3 flex flex-col gap-3 sm:flex-row sm:items-center md:hidden">
+              <CtaPrimary className="w-full sm:w-auto" />
+              <CtaSecondary light className="w-full sm:w-auto" />
             </div>
           </div>
         </section>
@@ -340,32 +391,79 @@ export default function Home() {
         {/* ── About + Strengths ── */}
         <section className="px-4 py-16 md:py-20">
           <div className="mx-auto max-w-[1200px]">
-            <div className="grid gap-12 md:grid-cols-2 md:items-start">
-              <div>
-                <h2 className="text-2xl font-extrabold text-brand-taupe md:text-3xl">FUNECTとは</h2>
-                <p className="mt-6 text-pretty leading-relaxed text-brand-muted">
-                  FUNECTは、問い合わせ対応や予約受付の流れを整え、事業者と利用者の双方にとって使いやすい体験を実現するためのサービスです。
-                </p>
-                <p className="mt-4 text-pretty leading-relaxed text-brand-muted">
-                  単なる受付機能ではなく、導線設計や運用のしやすさまで見据え、継続的に価値を生み出す仕組みづくりを支援します。
-                </p>
-              </div>
-              {/* Service flow diagram (CSS only) */}
-              <div className="flex items-center justify-center" aria-hidden>
-                <div className="flex flex-col items-center gap-3 text-sm">
-                  {["お客様がアクセス", "AIが自動で受付・回答", "予約確定 or スタッフへ引き継ぎ"].map((step, i) => (
-                    <div key={step} className="flex items-center gap-3">
-                      <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand-gold text-xs font-bold text-white">
-                        {i + 1}
-                      </span>
-                      <span className="rounded-lg bg-brand-light px-4 py-2 font-medium text-brand-taupe">{step}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            {/* セクションヘッダー（中央寄せ） */}
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="text-xs font-bold tracking-[0.2em] text-brand-rose">SERVICE FLOW</p>
+              <h2 className="mt-3 text-2xl font-extrabold text-brand-taupe md:text-3xl">FUNECTとは</h2>
+              <div className="mx-auto mt-4 h-0.5 w-12 bg-brand-gold" />
+              <p className="mt-6 text-pretty text-sm leading-relaxed text-brand-muted md:text-base">
+                FUNECTは、問い合わせ対応や予約受付の流れを整え、サロンの「受付」をまるごと自動化するAIコンシェルジュです。
+                <br className="hidden md:block" />
+                施術中も休みの日も、24時間お客様を取りこぼさない仕組みを、たった3ステップでつくります。
+              </p>
             </div>
 
-            <h3 className="mt-16 text-center text-xl font-bold text-brand-taupe">主な特長</h3>
+            {/* ①②③ カード横並び */}
+            <div className="mt-14 grid gap-8 md:mt-16 md:grid-cols-3 md:gap-6 lg:gap-8">
+              {[
+                {
+                  num: 1,
+                  title: "お客様がアクセス",
+                  body: "ホームページやLINEから、24時間いつでも気軽にチャット開始。「明日空いてる？」のひと言で会話が始まります。",
+                  gradient: "from-brand-rose/15 via-brand-gold/10 to-brand-cream",
+                  icon: <IconChat />,
+                  accent: "text-brand-rose",
+                },
+                {
+                  num: 2,
+                  title: "AIが自動で受付・回答",
+                  body: "メニュー・空き時間・担当指名を会話形式で案内。よくある質問や事前カルテの送付までAIが対応します。",
+                  gradient: "from-brand-gold/15 via-brand-rose/10 to-brand-cream",
+                  icon: <IconSpark />,
+                  accent: "text-brand-gold",
+                },
+                {
+                  num: 3,
+                  title: "予約確定 or スタッフへ",
+                  body: "条件が揃えばその場で予約確定。判断が必要な内容やクレームは、AIが勝手に答えずスタッフへ自然に引き継ぎます。",
+                  gradient: "from-brand-cream via-brand-gold/15 to-brand-rose/15",
+                  icon: <IconCalendar />,
+                  accent: "text-brand-rose",
+                },
+              ].map((step) => (
+                <article
+                  key={step.num}
+                  className="relative rounded-2xl border border-brand-taupe/10 bg-white p-6 pt-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                >
+                  {/* 番号バッジ（カード上端中央に浮かせる） */}
+                  <span className="absolute -top-5 left-1/2 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full bg-gradient-to-br from-brand-rose to-brand-gold text-sm font-extrabold text-white shadow-lg ring-4 ring-white">
+                    {step.num}
+                  </span>
+
+                  {/* 画像エリア（差し替え可能なビジュアルブロック） */}
+                  <div
+                    className={`relative mt-2 flex aspect-[4/3] items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br ${step.gradient}`}
+                    aria-hidden
+                  >
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.6),transparent_55%)]" />
+                    <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl bg-white/80 text-brand-rose shadow-sm backdrop-blur-sm [&>svg]:h-10 [&>svg]:w-10">
+                      {step.icon}
+                    </div>
+                  </div>
+
+                  {/* タイトル + アクセント線 */}
+                  <h3 className={`mt-5 text-center text-base font-bold md:text-lg ${step.accent}`}>
+                    {step.title}
+                  </h3>
+                  <div className="mx-auto mt-2 h-px w-12 bg-brand-gold/40" />
+
+                  {/* 説明 */}
+                  <p className="mt-4 text-sm leading-relaxed text-brand-muted">{step.body}</p>
+                </article>
+              ))}
+            </div>
+
+            <h3 className="mt-20 text-center text-xl font-bold text-brand-taupe">主な特長</h3>
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
               {strengths.map((s) => (
                 <div key={s.title} className="flex gap-4 rounded-2xl border border-brand-taupe/10 bg-white p-5 transition hover:shadow-md">
@@ -412,19 +510,24 @@ export default function Home() {
         {/* ── CTA Band 2 ── */}
         <CtaBand text="少人数サロンでも「受付がいる」状態をつくれます。" />
 
-        {/* ── LINE ── */}
+        {/* ── 対応チャネル（Webチャット & LINE連携） ── */}
         <section className="px-4 py-16 md:py-20">
           <div className="mx-auto grid max-w-[1200px] gap-12 md:grid-cols-2 md:items-center">
             <div>
-              <h2 className="text-2xl font-extrabold text-brand-taupe md:text-3xl">LINEとも連携</h2>
+              <p className="mb-3 inline-block rounded-full bg-brand-gold/15 px-3 py-1 text-xs font-semibold tracking-wide text-brand-gold">
+                対応チャネル
+              </p>
+              <h2 className="text-2xl font-extrabold text-brand-taupe md:text-3xl">
+                Webチャット ＆ LINE連携
+              </h2>
               <p className="mt-6 text-pretty leading-relaxed text-brand-muted">
-                公式LINEアカウントがある場合はLINE連携も可能です。チャットごとにAI自動応答のON/OFFを設定でき、難しい案件は店舗対応へ切り替えられます。
+                サロン公式サイトに設置するWebチャットを軸に、公式LINEアカウントとの連携にも対応。お客様が普段使う場所で、思い立ったその瞬間に予約まで進められます。
               </p>
               <ul className="mt-6 space-y-3">
                 {[
-                  "LINE経由でも自然な会話で予約・変更・質問に対応",
-                  "AI自動応答のON/OFFをチャットごとに切り替え",
-                  "対応が難しい場合は自動でスタッフへ引き継ぎ",
+                  "Webチャット：サイト来訪者をその場で予約へ",
+                  "LINE連携：既存のLINE友だちもそのまま受付窓口に",
+                  "AI自動応答のON/OFFをチャットごとに切替、難しい案件はスタッフへ引き継ぎ",
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-3">
                     <IconCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-gold" />
@@ -433,24 +536,40 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-            {/* LINE-style chat mock */}
-            <div className="flex justify-center" aria-hidden>
-              <div className="w-[280px] overflow-hidden rounded-2xl border border-brand-taupe/10 bg-white shadow-lg">
-                <div className="flex items-center gap-2 bg-[#06C755] px-4 py-3">
-                  <span className="text-xs font-bold text-white">LINE トーク</span>
+            {/* デュアルチャネル モック */}
+            <div className="flex justify-center gap-4" aria-hidden>
+              {/* Webチャット */}
+              <div className="w-[150px] overflow-hidden rounded-2xl border border-brand-taupe/10 bg-white shadow-lg sm:w-[170px]">
+                <div className="flex items-center gap-2 bg-gradient-to-r from-brand-rose to-brand-gold px-3 py-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-white/80" />
+                  <span className="text-[10px] font-bold text-white">Web Chat</span>
                 </div>
-                <div className="space-y-2.5 bg-[#8CABD9]/10 px-3 py-4 text-xs">
-                  <div className="max-w-[80%] rounded-xl rounded-tl-sm bg-white px-3 py-2 shadow-sm">
-                    明日の予約を変更したいのですが…
+                <div className="space-y-1.5 px-2 py-3 text-[10px]">
+                  <div className="max-w-[90%] rounded-lg rounded-tl-sm bg-brand-light px-2 py-1.5 text-brand-taupe">
+                    ご希望のメニューは？
                   </div>
-                  <div className="ml-auto max-w-[80%] rounded-xl rounded-tr-sm bg-[#06C755] px-3 py-2 text-white shadow-sm">
-                    かしこまりました。ご希望の日時を教えてください。
+                  <div className="ml-auto max-w-[90%] rounded-lg rounded-tr-sm bg-gradient-to-r from-brand-rose/20 to-brand-gold/20 px-2 py-1.5 text-brand-taupe">
+                    カット
                   </div>
-                  <div className="max-w-[80%] rounded-xl rounded-tl-sm bg-white px-3 py-2 shadow-sm">
-                    木曜の15時は空いていますか？
+                  <div className="max-w-[90%] rounded-lg rounded-tl-sm bg-brand-light px-2 py-1.5 text-brand-taupe">
+                    明日 11:00 / 13:00 / 16:00
                   </div>
-                  <div className="ml-auto max-w-[80%] rounded-xl rounded-tr-sm bg-[#06C755] px-3 py-2 text-white shadow-sm">
-                    15:00〜空きがございます。変更しますか？
+                </div>
+              </div>
+              {/* LINE */}
+              <div className="w-[150px] overflow-hidden rounded-2xl border border-brand-taupe/10 bg-white shadow-lg sm:w-[170px]">
+                <div className="flex items-center gap-2 bg-[#06C755] px-3 py-2">
+                  <span className="text-[10px] font-bold text-white">LINE</span>
+                </div>
+                <div className="space-y-1.5 bg-[#8CABD9]/10 px-2 py-3 text-[10px]">
+                  <div className="max-w-[90%] rounded-lg rounded-tl-sm bg-white px-2 py-1.5 shadow-sm">
+                    予約変更したいです
+                  </div>
+                  <div className="ml-auto max-w-[90%] rounded-lg rounded-tr-sm bg-[#06C755] px-2 py-1.5 text-white shadow-sm">
+                    変更先の日時は？
+                  </div>
+                  <div className="max-w-[90%] rounded-lg rounded-tl-sm bg-white px-2 py-1.5 shadow-sm">
+                    木曜15時で
                   </div>
                 </div>
               </div>
@@ -458,8 +577,58 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── 導入後の未来 ── */}
+        <section className="bg-brand-light px-4 py-16 md:py-20">
+          <div className="mx-auto max-w-[1200px]">
+            <p className="mx-auto mb-3 inline-block rounded-full bg-brand-gold/15 px-3 py-1 text-xs font-semibold tracking-wide text-brand-gold">
+              導入後の未来
+            </p>
+            <h2 className="text-2xl font-extrabold text-brand-taupe md:text-3xl">
+              受付に追われる時間を、
+              <br className="hidden md:block" />
+              <span className="text-brand-gold">本来の施術と、お客様への時間</span>へ。
+            </h2>
+            <p className="mt-6 max-w-2xl text-pretty leading-relaxed text-brand-muted">
+              電話・問い合わせ・予約調整に奪われていた時間を大幅に削減。生まれた余白をそのまま施術品質と接客に投じられるので、お客様満足が高まり、自然なリピート来店につながります。
+            </p>
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {[
+                {
+                  icon: <IconClock className="h-7 w-7" />,
+                  step: "01",
+                  title: "受付の時間が消える",
+                  body: "予約・変更・キャンセル・FAQをチャットが自動対応。スタッフは施術中も電話に追われません。",
+                },
+                {
+                  icon: <IconSpark className="h-7 w-7" />,
+                  step: "02",
+                  title: "施術と接客に集中できる",
+                  body: "生まれた余白を施術品質・カウンセリング・接客に投資。1人ひとりに丁寧に向き合えます。",
+                },
+                {
+                  icon: <IconHeart className="h-7 w-7" />,
+                  step: "03",
+                  title: "リピーターが増える",
+                  body: "満足度の高い体験 × 24時間の受付窓口。「次回もまた行きたい」が、思い立った瞬間に予約に繋がります。",
+                },
+              ].map((s) => (
+                <article key={s.step} className="rounded-2xl bg-white p-6 shadow-sm transition hover:shadow-lg">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-gold">
+                      {s.icon}
+                    </span>
+                    <span className="font-mono text-xs font-bold tracking-wider text-brand-gold">{s.step}</span>
+                  </div>
+                  <h3 className="mt-4 text-lg font-bold text-brand-taupe">{s.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-brand-muted">{s.body}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── Pricing ── */}
-        <section id="pricing" className="bg-brand-light px-4 py-16 md:py-20">
+        <section id="pricing" className="bg-white px-4 py-16 md:py-20">
           <div className="mx-auto max-w-[720px]">
             <h2 className="text-center text-2xl font-extrabold text-brand-taupe md:text-3xl">
               料金・トライアル
@@ -481,8 +650,10 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <p className="mt-6 text-xs text-brand-muted">
-                  お支払い：システム内で決済代行経由のクレジットカード決済を予定
+                <p className="mt-6 text-xs leading-relaxed text-brand-muted">
+                  決済はクレジットカード決済（決済代行：<span className="font-semibold text-brand-taupe">Stripe</span>）。
+                  <br />
+                  トライアル終了後、継続利用の支払い登録をしない限り自動的に利用停止となります。
                 </p>
                 <div className="mt-8">
                   <CtaPrimary className="w-full sm:w-auto" />
@@ -490,12 +661,22 @@ export default function Home() {
               </div>
             </div>
 
+            {/* 解約・再開ポリシー */}
+            <div className="mx-auto mt-8 max-w-[480px] rounded-2xl border border-brand-taupe/10 bg-white p-5 text-sm leading-relaxed text-brand-muted">
+              <p className="mb-2 font-semibold text-brand-taupe">トライアル後の解約・再開について</p>
+              <ul className="space-y-1.5">
+                <li>・トライアル終了後、支払い登録がなければ自動で利用停止（解約扱い）</li>
+                <li>・アカウント・データは削除されません</li>
+                <li>・再開したい場合は支払い登録から1ヶ月分の利用料金で再開できます</li>
+              </ul>
+            </div>
+
             {/* Trust points */}
             <div className="mt-10 grid gap-4 text-center sm:grid-cols-3">
               {[
-                { icon: <IconShield className="mx-auto h-6 w-6 text-brand-gold" />, text: "安心のAI引き継ぎ設計" },
+                { icon: <IconHeart className="mx-auto h-6 w-6 text-brand-gold" />, text: "リピーター流出を防ぐ" },
                 { icon: <IconCalendar className="mx-auto h-6 w-6 text-brand-gold" />, text: "24時間自動受付" },
-                { icon: <IconChat className="mx-auto h-6 w-6 text-brand-gold" />, text: "LINE連携対応" },
+                { icon: <IconChat className="mx-auto h-6 w-6 text-brand-gold" />, text: "Webチャット & LINE連携" },
               ].map((tp) => (
                 <div key={tp.text} className="rounded-xl bg-white p-4 shadow-sm">
                   {tp.icon}
@@ -507,7 +688,7 @@ export default function Home() {
         </section>
 
         {/* ── FAQ ── */}
-        <section className="px-4 py-16 md:py-20">
+        <section className="bg-brand-light px-4 py-16 md:py-20">
           <div className="mx-auto max-w-[800px]">
             <h2 className="text-center text-2xl font-extrabold text-brand-taupe md:text-3xl">
               よくある質問
