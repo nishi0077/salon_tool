@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const CORPORATE = "https://techplus-company.com/funect/";
-const CONTACT = "https://techplus-company.com/";
+const CONTACT = "https://techplus-company.com/%e3%81%8a%e5%95%8f%e3%81%84%e5%90%88%e3%82%8f%e3%81%9b/";
 const APPLY = "https://portal.funect.net/Apply";
 
 /* ─── SVG Icons (inline) ─── */
